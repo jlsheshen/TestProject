@@ -90,42 +90,42 @@ public class TinkerService extends Service {
 
 
     private void checkPatchInfo() {
-        RequestCenter.requestPatchUpdateInfo(new DisposeDataListener() {
-
-            @Override
-            public void onSuccess(Object responseObj) {
-                mBasePatchInfo = (com.edu.tinker.module.BasePatch) responseObj;
-                mHandler.sendEmptyMessage(DOWNLOAD_PATCH);
-            }
-
-            @Override
-            public void onFailure(Object reasonObj) {
-                stopSelf();
-            }
-        });
+//        RequestCenter.requestPatchUpdateInfo(new DisposeDataListener() {
+//
+//            @Override
+//            public void onSuccess(Object responseObj) {
+//                mBasePatchInfo = (com.edu.tinker.module.BasePatch) responseObj;
+//                mHandler.sendEmptyMessage(DOWNLOAD_PATCH);
+//            }
+//
+//            @Override
+//            public void onFailure(Object reasonObj) {
+//                stopSelf();
+//            }
+//        });
     }
 
     private void downloadPatch() {
 
-        mFilePtch = mPatchFileDir.concat(String.valueOf(System.currentTimeMillis()))
-                .concat(FILE_END);
-        RequestCenter.downloadFile(mBasePatchInfo.data.downloadUrl, mFilePtch,
-                new DisposeDownloadListener() {
-                    @Override
-                    public void onProgress(int progrss) {
-                        //可以打印文件下载进行
-                    }
-
-                    @Override
-                    public void onSuccess(Object responseObj) {
-
-                        TinkerManager.loadPatch(mFilePtch, mBasePatchInfo.data.md5);
-                    }
-
-                    @Override
-                    public void onFailure(Object reasonObj) {
-                        stopSelf();
-                    }
-                });
+//        mFilePtch = mPatchFileDir.concat(String.valueOf(System.currentTimeMillis()))
+//                .concat(FILE_END);
+//        RequestCenter.downloadFile(mBasePatchInfo.data.downloadUrl, mFilePtch,
+//                new DisposeDownloadListener() {
+//                    @Override
+//                    public void onProgress(int progrss) {
+//                        //可以打印文件下载进行
+//                    }
+//
+//                    @Override
+//                    public void onSuccess(Object responseObj) {
+//
+//                        TinkerManager.loadPatch(mFilePtch, mBasePatchInfo.data.md5);
+//                    }
+//
+//                    @Override
+//                    public void onFailure(Object reasonObj) {
+//                        stopSelf();
+//                    }
+//                });
     }
 }

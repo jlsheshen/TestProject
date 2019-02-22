@@ -3,7 +3,6 @@ package com.edu.tinker;
 import android.app.Application;
 import android.content.Context;
 import android.content.Intent;
-import android.support.multidex.MultiDex;
 
 import com.tencent.tinker.anno.DefaultLifeCycle;
 import com.tencent.tinker.loader.app.ApplicationLike;
@@ -31,7 +30,7 @@ public class CustomTinkerLike extends ApplicationLike {
     public void onBaseContextAttached(Context base) {
         super.onBaseContextAttached(base);
         //使应用支持分包
-        MultiDex.install(base);
+//        MultiDex.install(base);
 
         TinkerManager.installTinker(this);
     }
