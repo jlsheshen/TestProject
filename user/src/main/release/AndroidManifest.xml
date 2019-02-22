@@ -1,0 +1,9 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="com.edu.user">
+
+<application>
+<activity android:name=".usercenter.LoginActivity">
+
+</activity>
+</application>
+</manifest>
