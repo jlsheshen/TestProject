@@ -2,7 +2,9 @@ package com.edu.baselibary;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -12,6 +14,16 @@ import static org.junit.Assert.*;
 public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() {
-        assertEquals(4, 2 + 2);
+        System.out.println(stampToDate("978278400000"));
+     }
+
+    public   String stampToDate(String s){
+//      Locale.CHINA
+        String res;
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);
+        long lt = new Long(s);
+        Date date = new Date(lt);
+        res = simpleDateFormat.format(date);
+        return res;
     }
 }
